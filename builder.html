@@ -12,13 +12,12 @@
 <body>
 
 <header class="topbar">
-  <div class="brand">
-    <div class="logo-dot"></div>
-    <div>
-      <h1 style="margin:0;font-size:18px;">W2W</h1>
-      <div class="tag">What to Wear</div>
-    </div>
-  </div>
+  <div class="button-row">
+    <button class="secondary" onclick="clearOutfit()">Clear Outfit</button>
+    <button class="secondary" onclick="randomOutfit()">Random Outfit</button>
+    <button class="secondary" onclick="removeLastAccessory()">Undo Accessory</button>
+    <button class="primary" onclick="saveGridOutfit()">Save Outfit</button>
+</div>
 
   <nav class="nav">
     <a href="landing.html">Home</a>
