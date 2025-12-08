@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>W2W — Welcome</title>
+
+  <!-- Fonts + CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER / NAV -->
+<header class="topbar landing-topbar">
+  <div class="brand">
+    <div class="logo-dot">
+      <svg width="44" height="44" viewBox="0 0 44 44">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#6C5CE7"/>
+            <stop offset="100%" stop-color="#A29BFE"/>
+          </linearGradient>
+        </defs>
+
+        <rect width="44" height="44" rx="10" fill="url(#g1)"></rect>
+        <text x="50%" y="56%" text-anchor="middle" fill="#fff" font-size="18" font-family="Inter" font-weight="700" dy="0.3em">W</text>
+      </svg>
+    </div>
+
+    <div>
+      <h1 style="margin:0;font-size:18px;">W2W</h1>
+      <div class="tag">What to Wear</div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="landing.html" class="active">Home</a>
+    <a href="index.html">Open App</a>
+  </nav>
+</header>
+
+
+<!-- MAIN CONTENT -->
+<main class="content landing-content">
+
+  <!-- Hero Section -->
+  <section class="hero" style="text-align:center; padding-top:40px;">
+    <h2 style="font-size:32px; margin-bottom:12px;">Welcome to W2W</h2>
+    <p class="sub" style="max-width:750px; margin:auto;">
+      Build your digital closet, create outfits, and save styles — all in one place.
+      No sign-in required, but accounts help save your closet.
+    </p>
+  </section>
+
+
+  <!-- LOGIN / SIGNUP FORM -->
+  <section class="upload-card" style="max-width:500px;margin:45px auto;">
+    <h3 style="text-align:center;margin-bottom:5px;">Sign In or Create Account</h3>
+    <p class="muted" style="text-align:center;margin-bottom:20px;">
+      Accounts are stored locally for demo purposes.
+    </p>
+
+    <form id="authForm" onsubmit="return false;">
+
+      <!-- Email -->
+      <label class="muted">Email</label>
+      <input 
+        id="email"
+        type="email"
+        placeholder="you@example.com"
+        required
+        style="width:100%;padding:10px;border-radius:8px;margin-top:5px;border:1px solid rgba(0,0,0,0.08)"
+      >
+
+      <!-- Password -->
+      <label class="muted" style="margin-top:12px;display:block;">Password</label>
+      <input 
+        id="password"
+        type="password"
+        placeholder="Enter password"
+        required
+        style="width:100%;padding:10px;border-radius:8px;margin-top:5px;border:1px solid rgba(0,0,0,0.08)"
+      >
+
+      <!-- Buttons -->
+      <div style="display:flex;gap:10px;margin-top:18px;justify-content:flex-end;">
+        <button id="signinBtn" class="primary">Sign In</button>
+        <button id="signupBtn" class="ghost">Sign Up</button>
+      </div>
+    </form>
+
+    <hr style="margin:28px 0;border:none;border-top:1px solid rgba(0,0,0,0.07)">
+
+    <!-- Guest Option -->
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <small class="muted">Continue without an account?</small>
+      <button id="guestContinue" class="ghost">Continue as Guest</button>
+    </div>
+
+    <p id="authMsg" style="margin-top:15px;color:#6C5CE7;font-weight:600;"></p>
+  </section>
+
+
+  <!-- Feature Cards -->
+  <section style="margin-top:50px; display:flex; gap:22px; justify-content:center; flex-wrap:wrap;">
+    <div class="feature-card">
+      <h3>Upload Photos</h3>
+      <p class="muted">Add your clothing items to build your digital closet.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Create Outfits</h3>
+      <p class="muted">Use the mannequin to design outfits visually.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Save Styles</h3>
+      <p class="muted">Save and revisit your favorite looks.</p>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- JS -->
+<script src="script.js"></script>
+<script>
+  // SIGN UP
+  document.getElementById("signupBtn").addEventListener("click", function(e){
+    e.preventDefault();
+    const email = document.getElementById("email").value.trim();
+    const pw = document.getElementById("password").value;
+    const res = signup(email, pw);
+
+    document.getElementById("authMsg").innerText = res.message;
+    if(res.ok) window.location.href = "index.html";
+  });
+
+  // SIGN IN
+  document.getElementById("signinBtn").addEventListener("click", function(e){
+    e.preventDefault();
+    const email = document.getElementById("email").value.trim();
+    const pw = document.getElementById("password").value;
+    const res = signin(email, pw);
+
+    document.getElementById("authMsg").innerText = res.message;
+    if(res.ok) window.location.href = "index.html";
+  });
+
+  // GUEST MODE
+  document.getElementById("guestContinue").addEventListener("click", function(e){
+    e.preventDefault();
+    localStorage.setItem("currentUser", "guest");
+    window.location.href = "index.html";
+  });
+</script>
+
+</body>
+</html>
