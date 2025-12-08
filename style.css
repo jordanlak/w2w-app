@@ -270,4 +270,50 @@ body{
   .builder-container{ gap:18px; flex-direction:column; align-items:center; }
   .preview-grid{ grid-template-columns: repeat(auto-fill, minmax(100px,1fr)); }
   .mannequin{ width:200px; }
+}/* Outfit Builder Grid (NO MANNEQUIN) */
+
+.builder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
 }
+
+.selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px,1fr));
+  gap: 10px;
+}
+
+.selector-grid img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.selector-grid img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(16,16,40,0.06);
+}
+
+.selected-item {
+  outline: 3px solid #A29BFE;
+  box-shadow: 0 0 0 4px rgba(162,155,254,0.2);
+}
+
+.outfit-preview {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.outfit-preview img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(16,16,40,0.06);
+}
+
