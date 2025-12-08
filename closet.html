@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>W2W - Closet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo-dot">
+      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden>
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1"><stop offset="0%" stop-color="#6C5CE7"/><stop offset="100%" stop-color="#A29BFE"/></linearGradient>
+        </defs>
+        <rect width="44" height="44" rx="10" fill="url(#g1)"></rect>
+        <text x="50%" y="56%" text-anchor="middle" fill="white" font-size="18" font-weight="700" font-family="Inter">W</text>
+      </svg>
+    </div>
+    <div>
+      <h1 style="margin:0;font-size:18px;">W2W</h1>
+      <div class="tag">What to Wear</div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="landing.html">Home</a>
+    <a href="index.html">Upload</a>
+    <a href="closet.html" class="active">Closet</a>
+    <a href="builder.html">Builder</a>
+    <a href="saved.html">Saved</a>
+  </nav>
+</header>
+
+<main class="content">
+  <section class="hero">
+    <h2>Your Digital Closet</h2>
+    <p class="sub">All uploaded items appear here. Click a thumbnail to view or manage (delete/edit coming soon).</p>
+  </section>
+
+  <section class="upload-card">
+    <div id="closetGallery" class="preview-grid"></div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
