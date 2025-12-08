@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>W2W - Upload Clothing</title>
 
-  <!-- Fonts + Style -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,15 +13,7 @@
 
 <header class="topbar">
   <div class="brand">
-    <div class="logo-dot">
-      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden>
-        <defs>
-          <linearGradient id="g1" x1="0" x2="1"><stop offset="0%" stop-color="#6C5CE7"/><stop offset="100%" stop-color="#A29BFE"/></linearGradient>
-        </defs>
-        <rect width="44" height="44" rx="10" fill="url(#g1)"></rect>
-        <text x="50%" y="56%" text-anchor="middle" fill="white" font-size="18" font-weight="700" font-family="Inter">W</text>
-      </svg>
-    </div>
+    <div class="logo-dot"></div>
     <div>
       <h1 style="margin:0;font-size:18px;">W2W</h1>
       <div class="tag">What to Wear</div>
@@ -39,35 +30,34 @@
 </header>
 
 <main class="content">
+
   <section class="hero">
-    <h2>Upload Your Clothing</h2>
-    <p class="sub">Drag & drop or browse images to add items to your digital closet.</p>
+    <h2>Upload Clothing</h2>
+    <p class="sub">Upload an image, assign a category, and add it to your closet.</p>
   </section>
 
   <section class="upload-card">
-    <div id="dropZone" class="drop-zone">
-      <div class="drop-inner">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden>
-          <path d="M12 3v9" stroke="#9B84FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="#9B84FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16 8l-4-5-4 5" stroke="#9B84FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
 
-        <p class="drop-text">Drop images here or <button id="browseBtn" class="link-btn">browse</button></p>
-        <input id="uploadInput" type="file" accept="image/*" multiple hidden>
-      </div>
-    </div>
+    <h3>Select an image</h3>
 
-    <div id="previewGrid" class="preview-grid" aria-live="polite"></div>
+    <input 
+      type="file" 
+      id="uploadInput" 
+      accept="image/*" 
+      onchange="handleImageUpload(event)"
+    />
 
-    <div class="actions">
-      <button id="uploadBtn" class="primary">Save to Closet</button>
-      <button id="clearBtn" class="ghost">Clear Preview</button>
-    </div>
+    <p class="sub">After uploading, you will be asked to select a category (top, bottom, shoes, accessory).</p>
 
-    <p class="note" style="margin-top:16px;">Images are stored locally in your browser for demo purposes.</p>
   </section>
+
 </main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
 
 <script src="script.js"></script>
 </body>
