@@ -40,12 +40,17 @@
 
     <h3>Select an image</h3>
 
-    <input 
-      type="file" 
-      id="uploadInput" 
-      accept="image/*" 
-      onchange="handleImageUpload(event)"
-    />
+  <label class="upload-btn">
+  Choose Image
+  <input 
+    type="file" 
+    id="uploadInput" 
+    accept="image/*"
+    onchange="handleImageUpload(event)"
+    hidden
+  />
+</label>
+
 
     <p class="sub">After uploading, you will be asked to select a category (top, bottom, shoes, accessory).</p>
 
