@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>W2W - Outfit Builder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo-dot">
+      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden>
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1"><stop offset="0%" stop-color="#6C5CE7"/><stop offset="100%" stop-color="#A29BFE"/></linearGradient>
+        </defs>
+        <rect width="44" height="44" rx="10" fill="url(#g1)"></rect>
+        <text x="50%" y="56%" text-anchor="middle" fill="white" font-size="18" font-weight="700" font-family="Inter">W</text>
+      </svg>
+    </div>
+    <div>
+      <h1 style="margin:0;font-size:18px;">W2W</h1>
+      <div class="tag">What to Wear</div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="landing.html">Home</a>
+    <a href="index.html">Upload</a>
+    <a href="closet.html">Closet</a>
+    <a href="builder.html" class="active">Builder</a>
+    <a href="saved.html">Saved</a>
+  </nav>
+</header>
+
+<main class="content">
+  <section class="hero">
+    <h2>Outfit Builder</h2>
+    <p class="sub">Drag items from the list onto the mannequin. Drag again to reposition. Save your outfit.</p>
+  </section>
+
+  <section class="upload-card">
+    <div class="builder-container">
+      <div style="position:relative;">
+        <img src="https://i.imgur.com/eP8d8Jp.png" class="mannequin" id="mannequin" alt="mannequin">
+        <div id="outfitArea" class="outfit-area" aria-label="Outfit canvas"></div>
+      </div>
+
+      <div id="builderClothes" class="builder-clothes"></div>
+    </div>
+
+    <div style="text-align:center; margin-top:18px;">
+      <button onclick="saveOutfit()" class="primary">Save Outfit</button>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
