@@ -1,4 +1,21 @@
 /* ============================================================
+   IMAGE UPLOAD HANDLER (REQUIRED)
+   ============================================================ */
+
+function handleImageUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    const imgData = e.target.result;
+    saveClothingImage(imgData);  // sends to the category prompt function
+  };
+
+  reader.readAsDataURL(file);
+}
+/* ============================================================
    W2W SCRIPT — CLOSET, UPLOAD, BUILDER, SAVED OUTFITS
    ============================================================ */
 
