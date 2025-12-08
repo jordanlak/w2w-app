@@ -316,4 +316,16 @@ body{
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(16,16,40,0.06);
 }
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.button-row button {
+  flex: 1;
+  min-width: 120px;
+}
 
