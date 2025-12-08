@@ -4,22 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>W2W - Outfit Builder</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="topbar">
   <div class="brand">
-    <div class="logo-dot">
-      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden>
-        <defs>
-          <linearGradient id="g1" x1="0" x2="1"><stop offset="0%" stop-color="#6C5CE7"/><stop offset="100%" stop-color="#A29BFE"/></linearGradient>
-        </defs>
-        <rect width="44" height="44" rx="10" fill="url(#g1)"></rect>
-        <text x="50%" y="56%" text-anchor="middle" fill="white" font-size="18" font-weight="700" font-family="Inter">W</text>
-      </svg>
-    </div>
+    <div class="logo-dot"></div>
     <div>
       <h1 style="margin:0;font-size:18px;">W2W</h1>
       <div class="tag">What to Wear</div>
@@ -36,25 +30,51 @@
 </header>
 
 <main class="content">
+
   <section class="hero">
-    <h2>Outfit Builder</h2>
-    <p class="sub">Drag items from the list onto the mannequin. Drag again to reposition. Save your outfit.</p>
+    <h2>Create Your Outfit</h2>
+    <p class="sub">Select a top, bottom, shoes, and accessories to build your outfit.</p>
   </section>
 
   <section class="upload-card">
-    <div class="builder-container">
-      <div style="position:relative;">
-        <img src="https://i.imgur.com/eP8d8Jp.png" class="mannequin" id="mannequin" alt="mannequin">
-        <div id="outfitArea" class="outfit-area" aria-label="Outfit canvas"></div>
+
+    <!-- CLOTHING SELECTORS -->
+    <div class="builder-grid">
+
+      <div>
+        <h3>Top</h3>
+        <div id="topsList" class="selector-grid"></div>
       </div>
 
-      <div id="builderClothes" class="builder-clothes"></div>
+      <div>
+        <h3>Bottom</h3>
+        <div id="bottomsList" class="selector-grid"></div>
+      </div>
+
+      <div>
+        <h3>Shoes</h3>
+        <div id="shoesList" class="selector-grid"></div>
+      </div>
+
+      <div>
+        <h3>Accessories</h3>
+        <div id="accessoriesList" class="selector-grid"></div>
+      </div>
+
     </div>
 
-    <div style="text-align:center; margin-top:18px;">
-      <button onclick="saveOutfit()" class="primary">Save Outfit</button>
+    <hr style="margin:30px 0;">
+
+    <!-- OUTFIT PREVIEW -->
+    <h3 style="margin-bottom:12px;">Outfit Preview</h3>
+    <div id="outfitPreview" class="outfit-preview"></div>
+
+    <div style="text-align:right;margin-top:18px;">
+      <button onclick="saveGridOutfit()" class="primary">Save Outfit</button>
     </div>
+
   </section>
+
 </main>
 
 <script src="script.js"></script>
